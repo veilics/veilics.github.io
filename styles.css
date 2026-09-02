@@ -73,6 +73,13 @@ body {
 }
 .nav .btn { margin-left: auto; height: 36px; padding: 0 16px; }
 main { padding-top: 64px; }
+.brand-title {
+  height: 22px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
 .brand {
   display: flex;
   align-items: center;
@@ -300,7 +307,7 @@ footer {
   .hero { min-height: auto; padding-top: 28px; }
   .section { padding-top: 72px; }
   .cta-card { padding: 32px 22px; }
-  .brand-name { font-size: 18px; }
+  .brand-title { height: 18px; }
   .btn { padding: 10px 14px; }
 }
 
