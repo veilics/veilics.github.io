@@ -17,7 +17,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 const commands = [
-  { name: '/user', cat: 'Lookup', desc: 'Profile embed: friends, followers, RAP, verified items, offsale count, outfits dropdown.' },
+  { name: '/user', cat: 'Lookup', desc: 'Lookup a specific roblox user & get detailed results.' },
   { name: '/inventory', cat: 'Lookup', desc: 'View someone\'s entire inventory.' },
   { name: '/offsales', cat: 'Lookup', desc: 'Check what rare offsales a user has.' },
   { name: '/verified', cat: 'Lookup', desc: 'Check when and how someone was verified.' },
@@ -33,9 +33,9 @@ const commands = [
   { name: '/bypassv2', cat: 'Media', desc: 'Bypass an audio without an intro.' },
   { name: '/imgtolua', cat: 'Media', also: ['Utility'], desc: 'Convert an image into compact Lua pixel data.' },
   { name: '/exploits status', cat: 'Utility', desc: 'Live exploit statuses from whatexpsare.online.' },
-  { name: '/setup', cat: 'Server', desc: 'Admin wizard for member role, image perms, muted categories, autorole.' },
+  { name: '/setup', cat: 'Server', desc: 'Setup a server.' },
   { name: '/autorole', cat: 'Server', desc: 'Set or inspect the join role.' },
-  { name: '/server settings', cat: 'Server', desc: 'Edit setup options after the first run.' },
+  { name: '/server settings', cat: 'Server', desc: 'Edit the setup options.' },
   { name: '/dread grant', cat: 'Access', desc: 'Give a user access to special commands.' },
   { name: '/dread revoke', cat: 'Access', desc: 'Remove special-command access.' },
   { name: '/generate-keys', cat: 'Access', desc: 'Generate roblox API keys, 1 per cookie.' }
