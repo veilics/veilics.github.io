@@ -80,20 +80,29 @@ body {
   letter-spacing: -.03em;
 }
 .mark {
-  width: 32px; height: 32px;
-  display: grid; place-items: center;
-  border-radius: 9px;
-  background: linear-gradient(180deg, #3a3a3a, #161616);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.12);
-}
-.mark-img {
   width: 36px;
   height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  max-width: 36px;
+  max-height: 36px;
   border-radius: 10px;
-  object-fit: cover;
+  overflow: hidden;
+  flex: 0 0 36px;
+  display: block;
   border: 1px solid rgba(255,255,255,.12);
+  background: #111;
 }
+.mark img {
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+  max-height: 36px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
 .brand-name {
   font-family: CircularSpotify, Syne, sans-serif;
   font-weight: 800;
