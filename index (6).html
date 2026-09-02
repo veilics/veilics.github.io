@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dread</title>
+  <meta name="description" content="Dread is a private, fast Roblox-based Discord bot for inventories, offsales, outfits, verification, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    if (location.protocol === "http:") {
+      location.replace(location.href.replace(/^http:/, "https:"));
+    }
+    document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    document.addEventListener('keydown', function (e) {
+      const k = e.key || '';
+      if (
+        k === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (k === 'I' || k === 'i' || k === 'J' || k === 'j' || k === 'C' || k === 'c')) ||
+        (e.ctrlKey && (k === 'U' || k === 'u'))
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="mark"><img src="assets/dread.jpg" alt=""></span>
+      <span class="brand-name">Dread</span>
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#commands">Commands</a>
+      <a href="#owners">Owners</a>
+    </nav>
+    <a class="btn btn-solid" href="https://discord.gg/aria">Apply</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Roblox intelligence, rebuilt</p>
+        <h1>Look up anyone.<br />Resolve everything.</h1>
+        <p class="lead">Dread is a private, high-speed Roblox Discord bot for inventories, offsales, outfits, verification, and studio tools — dark, precise, and built to feel instant.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="https://discord.gg/aria">Apply for access</a>
+          <a class="btn btn-ghost" href="#commands">Browse commands</a>
+        </div>
+        <div class="stats">
+          <div><b>40+</b><span>commands</span></div>
+          <div><b>Cloud</b><span>inventory mode</span></div>
+          <div><b>Live</b><span>offsale checks</span></div>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="card3d" id="card3d">
+          <div class="card-face">
+            <div class="card-top">
+              <span class="dot"></span>
+              <span>/user Shedletsky</span>
+            </div>
+            <h3>Shedletsky</h3>
+            <p class="muted">Offsales · Verified · Outfits</p>
+            <div class="pills">
+              <span>Hat</span><span>Knight</span><span>Gift</span><span>Sign</span>
+            </div>
+            <div class="meter"><i></i></div>
+            <div class="card-row">
+              <span>Inventory</span><b>Public</b>
+            </div>
+            <div class="card-row">
+              <span>Elapsed</span><b>0.435s</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Built for collectors and servers that actually use Roblox data.</h2>
+      </div>
+      <div class="grid features">
+        <article class="tilt">
+          <h3>Inventory walk</h3>
+          <p>Cloud batches or proxy walks. Obtained dates, offsale flags, copy counts, and cached reloads for huge accounts.</p>
+        </article>
+        <article class="tilt">
+          <h3>Offsale index</h3>
+          <p>Check a user against offsales.json, sort lowest copies first, and page 25 at a time with live ownership checks.</p>
+        </article>
+        <article class="tilt">
+          <h3>Outfits + canvas</h3>
+          <p>Resolve every outfit, item links, robux totals, and an optional 3D-styled canvas render per page.</p>
+        </article>
+        <article class="tilt">
+          <h3>Verification</h3>
+          <p>Bio phrase verify, owner field on profiles, age / ID signals, and verified hat / knight / gift / sign ownership.</p>
+        </article>
+        <article class="tilt">
+          <h3>Studio tools</h3>
+          <p>Audio bypass, image-to-Lua, and game sound explore / rip for Combat Warriors, JJS, Examination, and more.</p>
+        </article>
+        <article class="tilt">
+          <h3>Server control</h3>
+          <p>Setup, autorole, dread access grants, cooldowns, and admin-only utilities without exposing keys in chat.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="commands" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Command deck</p>
+        <h2>Everything Dread can do.</h2>
+        <input id="cmdSearch" type="search" placeholder="Search commands…" autocomplete="off" />
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="cmd-list" id="cmdList"></div>
+    </section>
+
+
+    <section id="owners" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Owners</p>
+        <h2>Who runs Dread.</h2>
+      </div>
+      <div class="owners" id="ownersGrid"></div>
+    </section>
+    <section id="setup" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Get it running</p>
+        <h2>Apply, then configure.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <b>Apply for access</b>
+          <p>Dread is private. Join the server and apply — access is granted manually.</p>
+        </li>
+        <li>
+          <b>Look someone up</b>
+          <p>Start with <code>/user</code>, then jump into inventory, offsales, outfits, or verified.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="invite" class="cta">
+      <div class="cta-card">
+        <h2>Access is invite-only.</h2>
+        <p>Apply in the Discord and wait for Dread access. No public bot invite.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="https://discord.gg/aria">Apply</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Dread</span>
+    <span>Not affiliated with Roblox or Discord.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
