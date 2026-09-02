@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'CircularSpotify';
+  src: url('fonts/CircularSpotifyText-Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #050505;
   --ink: #ececec;
@@ -71,7 +79,7 @@ main { padding-top: 64px; }
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "CircularSpotify", sans-serif;
   font-weight: 800;
   letter-spacing: -.03em;
 }
@@ -100,7 +108,7 @@ main { padding-top: 64px; }
 }
 
 .brand-name {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "CircularSpotify", sans-serif;
   font-weight: 800;
 }
 .nav nav { margin-left: auto; display: flex; gap: 22px; }
@@ -139,7 +147,7 @@ main { padding-top: 64px; }
   margin-bottom: 14px;
 }
 h1, h2 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "CircularSpotify", sans-serif;
   letter-spacing: -.04em;
   line-height: .95;
 }
@@ -171,7 +179,7 @@ h2 { font-size: clamp(32px, 4vw, 56px); }
 }
 .card-top { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 16px var(--accent); }
-.card-face h3 { margin: 18px 0 6px; font-family: "Bebas Neue", sans-serif; font-size: 32px; }
+.card-face h3 { margin: 18px 0 6px; font-family: "CircularSpotify", sans-serif; font-size: 32px; }
 .muted { color: var(--muted); margin-bottom: 16px; }
 .pills { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
 .pills span {
@@ -204,7 +212,7 @@ h2 { font-size: clamp(32px, 4vw, 56px); }
   transition: transform .35s ease, border-color .35s ease;
 }
 .tilt:hover { transform: translateY(-8px) rotateX(4deg); border-color: rgba(255,255,255,.2); }
-.tilt h3 { font-family: "Bebas Neue", sans-serif; margin-bottom: 8px; }
+.tilt h3 { font-family: "CircularSpotify", sans-serif; margin-bottom: 8px; }
 .tilt p { color: var(--muted); line-height: 1.55; }
 
 #cmdSearch {
@@ -336,7 +344,7 @@ footer {
 }
 .owner-meta { min-width: 0; }
 .owner-nick {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "CircularSpotify", sans-serif;
   font-size: 28px;
   letter-spacing: .02em;
   line-height: 1;
@@ -349,3 +357,4 @@ footer {
 @media (max-width: 900px) {
   .owners { grid-template-columns: 1fr; }
 }
+
