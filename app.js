@@ -2,6 +2,20 @@ if (location.protocol === "http:") {
   location.replace(location.href.replace(/^http:/, "https:"));
 }
 
+document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+document.addEventListener('keydown', function (e) {
+  const k = e.key || '';
+  if (
+    k === 'F12' ||
+    (e.ctrlKey && e.shiftKey && (k === 'I' || k === 'i' || k === 'J' || k === 'j' || k === 'C' || k === 'c')) ||
+    (e.ctrlKey && (k === 'U' || k === 'u'))
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+});
+
 const commands = [
   { name: '/user', cat: 'Lookup', desc: 'Profile embed: friends, followers, RAP, verified items, offsale count, outfits dropdown.' },
   { name: '/inventory', cat: 'Lookup', desc: 'Walk or cloud-scan owned items with obtained dates, offsale tags, and copy counts.' },
@@ -87,43 +101,81 @@ function extFromHash(hash) {
   return hash && String(hash).startsWith('a_') ? 'gif' : 'png';
 }
 
+async function fetchDiscordUser(id) {
+  try {
+    const res = await fetch('https://japi.rest/discord/v1/user/' + id);
+    const json = await res.json();
+    const user = json.data || json;
+    if (user && (user.username || user.avatar || user.banner)) {
+      user.id = user.id || id;
+      return user;
+    }
+  } catch (e) {}
+  try {
+    const res = await fetch('https://api.lanyard.rest/v1/users/' + id);
+    const json = await res.json();
+    const user = json && json.data && json.data.discord_user;
+    if (user) {
+      user.id = user.id || id;
+      return user;
+    }
+  } catch (e) {}
+  return { id: id };
+}
+
 function renderOwnerCard(user) {
   const wrap = document.createElement('article');
   wrap.className = 'owner';
-  const banner = document.createElement('img');
-  banner.className = 'owner-banner';
-  banner.alt = '';
+
+  const banner = document.createElement(user.banner ? 'img' : 'div');
+  banner.className = 'owner-banner' + (user.banner ? '' : ' is-empty');
   if (user.banner) {
+    banner.alt = '';
     banner.src = 'https://cdn.discordapp.com/banners/' + user.id + '/' + user.banner + '.' + extFromHash(user.banner) + '?size=1024';
-  } else {
-    banner.src = 'https://japi.rest/discord/v1/user/' + user.id + '/banner';
+    banner.onerror = function () { banner.remove(); };
+  } else if (user.accent_color || user.banner_color) {
+    banner.style.background = user.banner_color || ('#' + Number(user.accent_color).toString(16).padStart(6, '0'));
   }
+
+  const body = document.createElement('div');
+  body.className = 'owner-body';
+
   const av = document.createElement('img');
   av.className = 'owner-avatar';
-  av.alt = user.global_name || user.username || '';
+  const nick = user.global_name || user.display_name || user.username || 'Unknown';
+  av.alt = nick;
   if (user.avatar) {
     av.src = 'https://cdn.discordapp.com/avatars/' + user.id + '/' + user.avatar + '.' + extFromHash(user.avatar) + '?size=256';
   } else {
-    av.src = 'https://japi.rest/discord/v1/user/' + user.id + '/avatar';
+    av.src = 'https://cdn.discordapp.com/embed/avatars/0.png';
   }
+
+  const meta = document.createElement('div');
+  meta.className = 'owner-meta';
+  const n = document.createElement('div');
+  n.className = 'owner-nick';
+  n.textContent = nick;
+  const u = document.createElement('div');
+  u.className = 'owner-user';
+  u.textContent = user.username ? '@' + user.username : '';
+  meta.appendChild(n);
+  if (user.username) meta.appendChild(u);
+
+  body.appendChild(av);
+  body.appendChild(meta);
   wrap.appendChild(banner);
-  wrap.appendChild(av);
+  wrap.appendChild(body);
   return wrap;
 }
 
 async function loadOwners() {
   const grid = document.getElementById('ownersGrid');
   if (!grid) return;
+  grid.innerHTML = '';
   for (const id of OWNER_IDS) {
-    try {
-      const res = await fetch('https://japi.rest/discord/v1/user/' + id);
-      const json = await res.json();
-      const user = json.data || json || { id: id };
-      user.id = user.id || id;
-      grid.appendChild(renderOwnerCard(user));
-    } catch (e) {
-      grid.appendChild(renderOwnerCard({ id: id }));
-    }
+    const user = await fetchDiscordUser(id);
+    grid.appendChild(renderOwnerCard(user));
   }
 }
 loadOwners();
+
