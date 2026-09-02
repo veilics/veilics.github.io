@@ -18,27 +18,27 @@ document.addEventListener('keydown', function (e) {
 
 const commands = [
   { name: '/user', cat: 'Lookup', desc: 'Profile embed: friends, followers, RAP, verified items, offsale count, outfits dropdown.' },
-  { name: '/inventory', cat: 'Lookup', desc: 'Walk or cloud-scan owned items with obtained dates, offsale tags, and copy counts.' },
-  { name: '/offsales', cat: 'Lookup', desc: 'Match a public inventory against offsales.json. Lowest copies first, 25 per page.' },
-  { name: '/verified', cat: 'Lookup', desc: 'Shows Hat, Knight, Gift, and Sign ownership plus obtained dates.' },
-  { name: '/outfits', cat: 'Lookup', desc: 'Every outfit with item links and robux totals. Optional canvas page per outfit.' },
+  { name: '/inventory', cat: 'Lookup', desc: 'View someone\'s entire inventory.' },
+  { name: '/offsales', cat: 'Lookup', desc: 'Check what rare offsales a user has.' },
+  { name: '/verified', cat: 'Lookup', desc: 'Check when and how someone was verified.' },
+  { name: '/outfits', cat: 'Lookup', desc: 'Every outfit with item links and robux totals.' },
   { name: '/explore', cat: 'Utility', also: ['Games'], desc: 'Browse dumped game sounds, search, pick, and rip audio assets.' },
 
 
 
 
   { name: '/verify', cat: 'Account', desc: 'Prove you own a Roblox account with a 12-word bio phrase.' },
-  { name: '/skincheck', cat: 'Media', desc: 'Render an offsale skincheck image and DM it. Admin / dread gated.' },
-  { name: '/bypass', cat: 'Media', desc: 'Process intro + main audio for Roblox playback.' },
-  { name: '/bypassv2', cat: 'Media', desc: 'Aura-oriented audio bypass, same settings pipeline.' },
+  { name: '/skincheck', cat: 'Media', desc: 'Render an offsale skincheck image and DM it. Admin / dread special access only.' },
+  { name: '/bypass', cat: 'Media', desc: 'Bypass an audio, with an intro feature included.' },
+  { name: '/bypassv2', cat: 'Media', desc: 'Bypass an audio without an intro.' },
   { name: '/imgtolua', cat: 'Media', also: ['Utility'], desc: 'Convert an image into compact Lua pixel data.' },
-  { name: '/exploits status', cat: 'Utility', desc: 'Live exploit status board from whatexpsare.online.' },
+  { name: '/exploits status', cat: 'Utility', desc: 'Live exploit statuses from whatexpsare.online.' },
   { name: '/setup', cat: 'Server', desc: 'Admin wizard for member role, image perms, muted categories, autorole.' },
   { name: '/autorole', cat: 'Server', desc: 'Set or inspect the join role.' },
   { name: '/server settings', cat: 'Server', desc: 'Edit setup options after the first run.' },
   { name: '/dread grant', cat: 'Access', desc: 'Give a user access to special commands.' },
   { name: '/dread revoke', cat: 'Access', desc: 'Remove special-command access.' },
-  { name: '/generate-keys', cat: 'Access', desc: 'Mint Roblox Open Cloud keys and DM them.' }
+  { name: '/generate-keys', cat: 'Access', desc: 'Generate roblox API keys, 1 per cookie.' }
 ];
 
 const filters = document.getElementById('filters');
