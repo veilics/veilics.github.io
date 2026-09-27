@@ -1,0 +1,9 @@
+{
+  "name": "dread jjs",
+  "short_name": "jjs",
+  "start_url": "/jjs/",
+  "scope": "/jjs/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#000000"
+}
