@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ===================== EMBED CONFIG =====================
+       Edit these values. Discord uses them when someone pastes dread.vc
+       BANNER = wide image in the embed (1200x630 works best)
+       SQUARE = dread.jpg thumbnail / favicon
+  ========================================================== -->
+  <meta name="embed-title" content="dread">
+  <meta name="embed-description" content="Private Roblox-based Discord bot for all your roblox needs.">
+  <meta name="embed-url" content="https://dread.vc/">
+  <meta name="embed-banner" content="https://dread.vc/assets/banner.jpg">
+  <meta name="embed-square" content="https://dread.vc/assets/dread.jpg">
+  <meta name="embed-color" content="#000000">
+
+  <title>dread</title>
+  <meta name="description" content="Private Roblox-based Discord bot for all your roblox needs." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="https://dread.vc/assets/dread.jpg" />
+  <link rel="apple-touch-icon" href="https://dread.vc/assets/dread.jpg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dread.vc/" />
+  <meta property="og:title" content="dread" />
+  <meta property="og:description" content="Private Roblox-based Discord bot for all your roblox needs." />
+  <meta property="og:image" content="https://dread.vc/assets/banner.jpg" />
+  <meta property="og:image:secure_url" content="https://dread.vc/assets/banner.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="dread" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="dread" />
+  <meta name="twitter:description" content="Private Roblox-based Discord bot for all your roblox needs." />
+  <meta name="twitter:image" content="https://dread.vc/assets/banner.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    if (location.protocol === "http:") {
+      location.replace(location.href.replace(/^http:/, "https:"));
+    }
+    document.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    document.addEventListener('keydown', function (e) {
+      const k = e.key || '';
+      if (
+        k === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (k === 'I' || k === 'i' || k === 'J' || k === 'j' || k === 'C' || k === 'c')) ||
+        (e.ctrlKey && (k === 'U' || k === 'u'))
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="mark"><img src="assets/dread.jpg" alt=""></span>
+      <img class="brand-title" src="assets/dreadtitle.png" alt="Dread">
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#commands">Commands</a>
+      <a href="#owners">Owners</a>
+    </nav>
+    <a class="btn btn-solid" href="https://discord.gg/aria">Apply</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Roblox intelligence, rebuilt</p>
+        <h1>Look up anyone.<br />Resolve everything.</h1>
+        <p class="lead">Dread is a fast, & private, Roblox-based Discord bot for all of your Roblox needs ^_^. Built to feel instant.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="https://discord.gg/aria">Apply for access</a>
+          <a class="btn btn-ghost" href="#commands">Browse commands</a>
+        </div>
+        <div class="stats">
+          <div><b>20+</b><span>commands</span></div>
+          <div><b>12+</b><span>Users</span></div>
+          <div><b>Accurate</b><span>Data</span></div>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="card3d" id="card3d">
+          <div class="card-face">
+            <div class="card-top">
+              <span class="dot"></span>
+              <span>/user Shedletsky</span>
+            </div>
+            <h3>Shedletsky</h3>
+            <p class="muted">Offsales · Verified · Outfits</p>
+            <div class="pills">
+              <span>Hat</span><span>Knight</span><span>Gift</span><span>Sign</span>
+            </div>
+            <div class="meter"><i></i></div>
+            <div class="card-row">
+              <span>Inventory</span><b>Public</b>
+            </div>
+            <div class="card-row">
+              <span>Elapsed</span><b>0.435s</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Capabilities</p>
+        <h2>Built for anyone.</h2>
+      </div>
+      <div class="grid features">
+        <article class="tilt">
+          <h3>Inventory Viewing</h3>
+          <p>View someone's entire Inventory on roblox, with every detail needed, in one command.</p>
+        </article>
+        <article class="tilt">
+          <h3>Offsales</h3>
+          <p>Check what rare offsales a user has, if any. Includes the copy count of every offsale.</p>
+        </article>
+        <article class="tilt">
+          <h3>Outfits</h3>
+          <p>View every outfit, someone has, with the price of each, & the item links.</p>
+        </article>
+        <article class="tilt">
+          <h3>Verification</h3>
+          <p>Advanced Roblox-verification checking, including specific types, and when that verification happened.</p>
+        </article>
+        <article class="tilt">
+          <h3>Extra/Special Access</h3>
+          <p>Audio bypassing, image bypassing, game sound explorer & ripper/stealer, asset stealing, API key generating, & more.</p>
+        </article>
+        <article class="tilt">
+          <h3>More to come.</h3>
+          <p>With dread, there will always be more. Stay up-to-date by checking the updates channel from time to time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="commands" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Command deck</p>
+        <h2>Everything Dread can do.</h2>
+        <input id="cmdSearch" type="search" placeholder="Search commands…" autocomplete="off" />
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="cmd-list" id="cmdList"></div>
+    </section>
+
+
+    <section id="owners" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Owners</p>
+        <h2>Who runs Dread.</h2>
+      </div>
+      <div class="owners" id="ownersGrid"></div>
+    </section>
+    <section id="setup" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Get it running</p>
+        <h2>Apply, & enjoy.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <b>Apply for access</b>
+          <p>Dread is private. Join the server and apply — access is granted manually.</p>
+        </li>
+        <li>
+          <b>Look someone up</b>
+          <p>You can start with anything besides special access commands. If you get access, enjoy ^_^.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="invite" class="cta">
+      <div class="cta-card">
+        <h2>Access is invite-only.</h2>
+        <p>Apply to the Discord and wait for your application to be accepted. No public bot invite.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="https://discord.gg/aria">Apply</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Dread</span>
+    <span>Not affiliated with Roblox or Discord.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
