@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dread · jjs</title>
+  <link rel="icon" href="https://dread.vc/assets/dread.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+
+  <header class="nav">
+    <a class="brand" href="https://dread.vc/">
+      <span class="mark"><img src="https://dread.vc/assets/dread.jpg" alt=""></span>
+      dread
+    </a>
+    <nav>
+      <a href="https://dread.vc/#features">Features</a>
+      <a href="https://dread.vc/#commands">Commands</a>
+      <a href="/jjs/">JJS</a>
+    </nav>
+    <label class="btn btn-solid">Open
+      <input id="fileInput" type="file" accept=".rbxl,.rbxlx,.rbxm,.rbxmx,.txt,.json">
+    </label>
+  </header>
+
+  <main class="wrap">
+    <aside class="card explorer">
+      <h2>Explorer · <span id="explorerPath">Workspace</span></h2>
+      <input class="field" id="search" placeholder="Search">
+      <div class="tree" id="tree"></div>
+    </aside>
+
+    <aside class="card props">
+      <h2 id="hudTitle">No place loaded</h2>
+      <p class="hint" id="hudMeta">Drop a place or model. Conversion runs on the server.</p>
+
+      <label>Skill name</label>
+      <input class="field" id="skillName" value="converted">
+      <div class="pair">
+        <div>
+          <label>Key</label>
+          <input class="field" id="skillKey" type="number" value="1">
+        </div>
+        <div>
+          <label>Duration</label>
+          <input class="field" id="duration" type="number" min="0" step="0.1" value="0">
+        </div>
+      </div>
+      <label>Position</label>
+      <input class="field" id="position" value="0, 0, 0">
+
+      <label class="check"><input id="packMode" type="checkbox"> Pack mode</label>
+      <label class="check"><input id="recolor" type="checkbox"> Recolor</label>
+
+      <div class="pal-row">
+        <button class="chip" id="mainFound"></button>
+        <button class="chip" id="accentFound"></button>
+        <button class="chip" id="otherFound"></button>
+      </div>
+      <div id="recolorBox" class="recolor">
+        <div class="pair tight">
+          <input id="mainColor" type="color" value="#ff3355"><input class="field" id="mainHex" value="#ff3355">
+        </div>
+        <div class="pair tight">
+          <input id="accentColor" type="color" value="#ffcc66"><input class="field" id="accentHex" value="#ffcc66">
+        </div>
+        <div class="pair tight">
+          <input id="otherColor" type="color" value="#ffffff"><input class="field" id="otherHex" value="#ffffff">
+        </div>
+      </div>
+
+      <button class="btn btn-solid wide" id="exportBtn">Export</button>
+
+      <label>JSON</label>
+      <div class="output" id="output"></div>
+      <div class="actions">
+        <button class="btn btn-ghost" id="copyJson">Copy JSON</button>
+      </div>
+      <label>Zstd</label>
+      <div class="output" id="compactOut"></div>
+      <div class="actions">
+        <button class="btn btn-ghost" id="copyCompact">Copy zstd</button>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="status">
+    <span id="selCount">0 emitters</span>
+    <span id="statusText">Ready</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
